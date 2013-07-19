@@ -1,13 +1,14 @@
 ##Configuration files for various utilities
-Includes files for Vim, Bash, Zsh, Screen.
+This is a set of configuration files I have gathered over time.
+
+Includes files for **Vim**, Bash, Zsh, Screen.
 
 -------------------
 ###Installation
-    $ sh ./bootstrap.sh
+    $ sh ./install.sh
 
-Answer *yes* when prompted. 
+Then follow the prompts.
 
-To exclude files from being installed add an `--exclude "<file>"` in bootstrap.sh.
 
 ----------
 ### Vim 

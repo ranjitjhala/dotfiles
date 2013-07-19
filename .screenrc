@@ -27,4 +27,4 @@ bindkey "^[[6;5~" next
 
 # bind 'q' quit
 
-screen -t pvekris 0
+screen -t $USER 0
