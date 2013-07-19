@@ -511,7 +511,7 @@ Bundle 'vim-scripts/ZoomWin'
 " ToggleMouse: Use <F12> to toggle between Vim and terminal mode
 Bundle 'nvie/vim-togglemouse'
 
-" Hoogle: C-F1 and C-F2 to use hoogle in Vim
+" Hoogle: use hoogle search in Vim
 Bundle 'Twinside/vim-hoogle'
 
 Bundle 'lukerandall/haskellmode-vim'
