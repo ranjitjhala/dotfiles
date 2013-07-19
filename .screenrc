@@ -1,0 +1,30 @@
+
+# C-a :source .screenrc
+
+termcapinfo xterm* ti@:te@
+startup_message off
+vbell off
+autodetach on
+altscreen on
+shelltitle "$ |bash"
+defscrollback 10000
+defutf8 on
+nonblock on
+
+#escape ``
+#escape `e
+
+# BIND ESCAPE TO F11!
+# bindkey -k F1 command
+
+hardstatus alwayslastline                                                                                                                          
+hardstatus string "%h"
+caption always "%{= kw} %-w%{= wk}%n*%t%{-}%+w%{= kw} %=%d %M %0c %{g}%H%{-}"
+
+# Map Ctrl-PgUp and Ctrl-PgDown to previous and next window
+bindkey "^[[5;5~" prev
+bindkey "^[[6;5~" next
+
+# bind 'q' quit
+
+screen -t pvekris 0
