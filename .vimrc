@@ -500,7 +500,8 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-sensible'
 
 " Haskell: a little better syntax
-Bundle 'urso/haskell_syntax.vim'
+" Bundle 'urso/haskell_syntax.vim'
+Bundle 'travitch/hasksyn'
 
 " Lushtags: better tags for Haskell
 Bundle 'bitc/lushtags'
@@ -514,7 +515,19 @@ Bundle 'nvie/vim-togglemouse'
 " Hoogle: use hoogle search in Vim
 Bundle 'Twinside/vim-hoogle'
 
-Bundle 'lukerandall/haskellmode-vim'
+" Haskellmode: support for GHCI in Vim
+" This fork fixes the command line height
+Bundle 'kniren/haskellmode-vim'
+
+" HaskellFold: better Haskell folding
+Bundle 'Twinside/vim-haskellFold'
+
+" Session: Extended session management for Vim
+Bundle 'xolox/vim-session'
+
+" VimMisc: Miscellaneous auto-load Vim scripts - needed for session
+Bundle 'xolox/vim-misc'
+
 
 " vim-scripts repos
 " Bundle 'L9'
@@ -584,12 +597,28 @@ filetype plugin on
 " This assumes that ghc is in your path, if it is not, or you
 " wish to use a specific version of ghc, then please change
 " the ghc below to a full path to the correct one
-au BufEnter *.hs compiler ghc
-"
+
+" XXX: Disabling Haskellmode as it does not work well with Ack
+" au BufEnter *.hs compiler ghc
+
 " For this section both of these should be set to your
 " browser and ghc of choice, I used the following
 " two vim lines to get those paths:
 " :r!which google-chrome
 " :r!which ghc
 let g:ghc = "ghc"
+
+
+
+"------------------------------------------------------------
+" Haskell Syntax
+"------------------------------------------------------------
+" How many lines should be searched for context
+let g:hasksyn_indent_search_backward = 100
+
+" Should we try to de-indent after a return
+let g:hasksyn_dedent_after_return = 1
+
+" Should we try to de-indent after a catchall case in a case .. of
+let g:hasksyn_dedent_after_catchall_case = 1
 
