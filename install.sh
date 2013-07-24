@@ -25,6 +25,7 @@ backup () {
     echo "Backing up $HOME/$i ..."
     mv $HOME/$i            $filename 2> /dev/null  
   done
+  echo
   echo "Backed up configuration files in: $filename"
 }
 
