@@ -37,7 +37,8 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -130,3 +131,34 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 alias pp='python -mjson.tool'
+
+#########################################################################33
+
+OCAMLRUNPARAM=b
+
+DJS_DIR=/home/rjhala/research/djs
+LIQUIDHS=/home/rjhala/research/liquid/liquidhaskell
+PATH=/home/rjhala/.cabal/bin:/home/rjhala/research/ghc-working-local-new/bin:/home/rjhala/local/bin:$PATH
+LD_LIBRARY_PATH=/usr/lib/:$PATH
+BIBPATH=/home/rjhala/local/tex
+
+export PATH HOSTNAME LOGNAME TEXINPUTS OCAMLRUNPARAM LIQUIDHS LD_LIBRARY_PATH DJS_DIR
+
+# From http://railstips.org/blog/archives/2009/02/02/bedazzle-your-bash-prompt-with-git-info/
+function parse_git_branch {
+  ref=$(git symbolic-ref HEAD 2>/dev/null) || return
+    echo " ("${ref#refs/heads/}")"
+  }
+
+
+
+# Fancy command prompt with date, time, host and path
+
+export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;31m\]$(parse_git_branch)\[\033[00m\]\$ '
+
+#export PS1='$(date +"%m/%d %R")\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;31m\]$(parse_git_branch)\[\033[00m\]\$'
+
+
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+

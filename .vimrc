@@ -52,7 +52,7 @@ colorscheme github
 "hi CursorLine term=bold cterm=bold guibg=Grey40
 
 " Font
-set guifont=monospace\ 8
+set guifont=monospace\ 10
 
 
 
@@ -149,7 +149,6 @@ set pastetoggle=<F7>
 set showmode
 
 
-
 "------------------------------------------------------------
 " Indentation options
 "------------------------------------------------------------
@@ -165,7 +164,7 @@ set expandtab
 " Indentation settings for using hard tabs for indent. Display tabs as
 " two characters wide.
 "set shiftwidth=2
-set tabstop=2
+set tabstop=4
 
 
 
@@ -226,7 +225,7 @@ endif
 set cpo&vim
 
 " set 'selection', 'selectmode', 'mousemodel' and 'keymodel' for MS-Windows
-behave mswin
+" behave mswin
 
 " backspace and cursor keys wrap to previous/next line
 set backspace=indent,eol,start whichwrap+=<,>,[,]
@@ -313,7 +312,7 @@ vnoremap <Esc>[OD h
 " when you place cursor in a variable name all occurences of the variable are
 " highlighted. this is very useful for quick searching all occurences of the
 " variable
-" autocmd CursorMoved * silent! exe printf('match IncSearch /\<%s\>/', expand('<cword>'))
+autocmd CursorMoved * silent! exe printf('match IncSearch /\<%s\>/', expand('<cword>'))
 
 
 
@@ -331,7 +330,10 @@ map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
 autocmd VimEnter * set vb t_vb=
 
-set guioptions=
+
+" set guioptions-=m
+set guioptions-=T
+set guioptions-=r
 
 let tex_no_error=1
 
