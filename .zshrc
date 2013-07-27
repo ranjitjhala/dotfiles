@@ -29,7 +29,9 @@ if [[ "$TERM" != "dumb" ]]; then
     fi
 fi
 
-export PAGER="most"
+if [[ `hostname -s` != 'goto' ]]; then
+  export PAGER="most"
+fi
 
 #keep history file between sessions
 HISTSIZE=1000
