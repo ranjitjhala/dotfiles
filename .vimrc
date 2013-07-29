@@ -599,7 +599,7 @@ filetype plugin on
 " the ghc below to a full path to the correct one
 
 " XXX: Disabling Haskellmode as it does not work well with Ack
-" au BufEnter *.hs compiler ghc
+au BufEnter *.hs compiler ghc
 
 " For this section both of these should be set to your
 " browser and ghc of choice, I used the following
