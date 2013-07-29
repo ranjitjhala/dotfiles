@@ -491,7 +491,7 @@ Bundle 'embear/vim-localvimrc'
 Bundle 'gregsexton/gitv'
 
 " Ack: Grep-like tool within Vim - Requires acq-grep
-Bundle 'mileszs/ack.vim'
+Bundle 'panagosg7/ack.vim'
 
 " CtrlP: Fuzzy Finder !!!
 Bundle 'kien/ctrlp.vim'
