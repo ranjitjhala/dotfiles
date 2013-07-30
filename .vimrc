@@ -632,3 +632,8 @@ let g:hasksyn_dedent_after_catchall_case = 1
 let g:session_autosave = 'no'
 
 
+
+"------------------------------------------------------------
+" Tabman options
+"------------------------------------------------------------
+let g:tabman_number = 0
