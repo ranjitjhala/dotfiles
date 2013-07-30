@@ -528,6 +528,8 @@ Bundle 'xolox/vim-session'
 " VimMisc: Miscellaneous auto-load Vim scripts - needed for session
 Bundle 'xolox/vim-misc'
 
+" Tabmain: Tab management for Vim
+Bundle 'kien/tabman.vim'
 
 " vim-scripts repos
 " Bundle 'L9'
