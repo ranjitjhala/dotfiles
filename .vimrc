@@ -8,6 +8,143 @@
 
 
 "------------------------------------------------------------
+" Vundle
+"------------------------------------------------------------
+
+" Vundle is short for Vim bundle and is a Vim plugin manager.
+
+set nocompatible               " be iMproved
+filetype off                   " required!
+
+if !isdirectory(expand("~/.vim/bundle/vundle/.git"))
+    !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+endif
+
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle (required!)
+Bundle 'gmarik/vundle'
+
+" My Bundles here:
+
+" original repos on github
+
+" Fugitive: git wrapper (not terribly useful)
+Bundle 'tpope/vim-fugitive'
+
+" NerdTree: nuff said 
+Bundle 'scrooloose/nerdtree'
+
+" Tabular: tabularize...
+Bundle 'godlygeek/tabular'
+
+" NerdtreeTabs: nerdtree support
+Bundle 'jistr/vim-nerdtree-tabs'
+
+"NerdCommenter: easy commenting
+Bundle 'scrooloose/nerdcommenter'
+
+" Gundo: browse the undo tree
+Bundle 'sjl/gundo.vim'
+
+" Tagbar: display tabs (not very useful so far...)
+Bundle 'majutsushi/tagbar'
+
+" Solarized: fancy colorscheme
+Bundle 'altercation/vim-colors-solarized'
+
+"VimMarkDown: syntax for markdown
+Bundle 'plasticboy/vim-markdown'
+
+" Powerline: fancy command line
+Bundle 'Lokaltog/vim-powerline'
+
+" Signify: show git information on the side
+Bundle 'mhinz/vim-signify'
+
+" Syntastic: syntax checking plugin
+Bundle 'scrooloose/syntastic'
+
+" Hdevtools: Haskell development tools
+" vim-hdevtools require hdevtools - installed through cabal
+Bundle 'bitc/vim-hdevtools'
+
+" Easymotion: Hit \\ to get easy access to places around your current position
+Bundle 'Lokaltog/vim-easymotion'
+
+" LocalVim: Load your local vimrc file, named .lvimrc
+Bundle 'embear/vim-localvimrc'
+
+" Gitv: Gitk within Vim 
+Bundle 'gregsexton/gitv'
+
+" Ack: Grep-like tool within Vim - Requires acq-grep
+Bundle 'panagosg7/ack.vim'
+
+" CtrlP: Fuzzy Finder !!!
+Bundle 'kien/ctrlp.vim'
+
+" Sensible: Defaults everyone can agree on
+Bundle 'tpope/vim-sensible'
+
+" Haskell: a little better syntax
+" Bundle 'urso/haskell_syntax.vim'
+Bundle 'travitch/hasksyn'
+
+" Lushtags: better tags for Haskell
+Bundle 'bitc/lushtags'
+
+" ZoomWin: hit <C-w>o to zoom to single window
+Bundle 'vim-scripts/ZoomWin'
+
+" ToggleMouse: Use <F12> to toggle between Vim and terminal mode
+Bundle 'nvie/vim-togglemouse'
+
+" Hoogle: use hoogle search in Vim
+Bundle 'Twinside/vim-hoogle'
+
+" Haskellmode: support for GHCI in Vim
+" This fork fixes the command line height
+Bundle 'kniren/haskellmode-vim'
+
+" HaskellFold: better Haskell folding
+Bundle 'Twinside/vim-haskellFold'
+
+" Session: Extended session management for Vim
+Bundle 'xolox/vim-session'
+
+" VimMisc: Miscellaneous auto-load Vim scripts - needed for session
+Bundle 'xolox/vim-misc'
+
+
+" vim-scripts repos
+" Bundle 'L9'
+" Bundle 'FuzzyFinder'
+
+" non github repos
+" Bundle 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (ie. when working on your own plugin)
+" Bundle 'file:///Users/gmarik/path/to/plugin'
+" ...
+
+filetype plugin indent on     " required!
+"
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle command are not allowed.
+
+
+
+
+
+"------------------------------------------------------------
 " Features
 "------------------------------------------------------------
 "
@@ -41,7 +178,7 @@ set sw=2
 set textwidth=80
 
 " Background Color
-set background=dark
+set background=light
 
 " Colorscheme
 colorscheme github
@@ -52,7 +189,7 @@ colorscheme github
 "hi CursorLine term=bold cterm=bold guibg=Grey40
 
 " Font
-set guifont=monospace\ 8
+" set guifont=monospace\ 8
 
 
 
@@ -414,143 +551,6 @@ let g:tagbar_type_scala = {
         \ 'm:methods'
     \ ]
     \ }
-
-
-
-"------------------------------------------------------------
-" Vundle
-"------------------------------------------------------------
-
-" Vundle is short for Vim bundle and is a Vim plugin manager.
-
-set nocompatible               " be iMproved
-filetype off                   " required!
-
-if !isdirectory(expand("~/.vim/bundle/vundle/.git"))
-    !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-endif
-
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" let Vundle manage Vundle (required!)
-Bundle 'gmarik/vundle'
-
-" My Bundles here:
-
-" original repos on github
-
-" Fugitive: git wrapper (not terribly useful)
-Bundle 'tpope/vim-fugitive'
-
-" NerdTree: nuff said 
-Bundle 'scrooloose/nerdtree'
-
-" Tabular: tabularize...
-Bundle 'godlygeek/tabular'
-
-" NerdtreeTabs: nerdtree support
-Bundle 'jistr/vim-nerdtree-tabs'
-
-"NerdCommenter: easy commenting
-Bundle 'scrooloose/nerdcommenter'
-
-" Gundo: browse the undo tree
-Bundle 'sjl/gundo.vim'
-
-" Tagbar: display tabs (not very useful so far...)
-Bundle 'majutsushi/tagbar'
-
-" Solarized: facny colorscheme
-Bundle 'altercation/vim-colors-solarized'
-
-"VimMarkDown: syntax for markdown
-Bundle 'plasticboy/vim-markdown'
-
-" Powerline: fancy command line
-Bundle 'Lokaltog/vim-powerline'
-
-" Signify: show git information on the side
-Bundle 'mhinz/vim-signify'
-
-" Syntastic: syntax checking plugin
-Bundle 'scrooloose/syntastic'
-
-" Hdevtools: Haskell development tools
-" vim-hdevtools require hdevtools - installed through cabal
-Bundle 'bitc/vim-hdevtools'
-
-" Easymotion: Hit \\ to get easy access to places around your current position
-Bundle 'Lokaltog/vim-easymotion'
-
-" LocalVim: Load your local vimrc file, named .lvimrc
-Bundle 'embear/vim-localvimrc'
-
-" Gitv: Gitk within Vim 
-Bundle 'gregsexton/gitv'
-
-" Ack: Grep-like tool within Vim - Requires acq-grep
-Bundle 'panagosg7/ack.vim'
-
-" CtrlP: Fuzzy Finder !!!
-Bundle 'kien/ctrlp.vim'
-
-" Sensible: Defaults everyone can agree on
-Bundle 'tpope/vim-sensible'
-
-" Haskell: a little better syntax
-" Bundle 'urso/haskell_syntax.vim'
-Bundle 'travitch/hasksyn'
-
-" Lushtags: better tags for Haskell
-Bundle 'bitc/lushtags'
-
-" ZoomWin: hit <C-w>o to zoom to single window
-Bundle 'vim-scripts/ZoomWin'
-
-" ToggleMouse: Use <F12> to toggle between Vim and terminal mode
-Bundle 'nvie/vim-togglemouse'
-
-" Hoogle: use hoogle search in Vim
-Bundle 'Twinside/vim-hoogle'
-
-" Haskellmode: support for GHCI in Vim
-" This fork fixes the command line height
-Bundle 'kniren/haskellmode-vim'
-
-" HaskellFold: better Haskell folding
-Bundle 'Twinside/vim-haskellFold'
-
-" Session: Extended session management for Vim
-Bundle 'xolox/vim-session'
-
-" VimMisc: Miscellaneous auto-load Vim scripts - needed for session
-Bundle 'xolox/vim-misc'
-
-" Tabmain: Tab management for Vim
-Bundle 'kien/tabman.vim'
-
-" vim-scripts repos
-" Bundle 'L9'
-" Bundle 'FuzzyFinder'
-
-" non github repos
-" Bundle 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (ie. when working on your own plugin)
-" Bundle 'file:///Users/gmarik/path/to/plugin'
-" ...
-
-filetype plugin indent on     " required!
-"
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed.
 
 
 
